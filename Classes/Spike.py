@@ -6,7 +6,7 @@ class Spike():
         self.size = (width, height)
         self.x = int(x)
         self.y = int(y)
-        self.image = pygame.image.load('Spike.png')
+        self.image = pygame.image.load('Images/SPIKE.png')
         self.image = pygame.transform.scale(self.image, self.size)
         self.rect = self.image.get_rect()
 
