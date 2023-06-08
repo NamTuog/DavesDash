@@ -6,13 +6,13 @@ class Alien():
         self.speed = 5
         self.img1 = pygame.image.load('Images/WALK1.png')
         self.img1 = pygame.transform.scale(self.img1, self.size)
-        self.rect = self.img1.get_rect()
         self.img2 = pygame.image.load('Images/WALK2.png')
         self.img2 = pygame.transform.scale(self.img2, self.size)
         self.img2 = pygame.image.load('Images/WALK3.png')
         self.img2 = pygame.transform.scale(self.img3, self.size)
-        self.run = [self.img1,self.img2,self.img3]
 
+        self.run = [self.img1,self.img2,self.img3]
+        self.rect = self.img1.get_rect()
         self.rect.move(rx,wany)
 
         # Changing images
