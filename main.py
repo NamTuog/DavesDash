@@ -46,3 +46,4 @@ while Level == 1:
             sys.exit()
     Level1.update(Lv1,enemies, Platform, spikes,Dave,SCREEN,Alien)
     pygame.display.update()
+    #Dave won't move?
