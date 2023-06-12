@@ -2,6 +2,4 @@
 
 class Collide():
     def __init__(self):
-        self.alive="hello"
-
-
+        self.alive = "hello"
