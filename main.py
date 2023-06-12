@@ -47,7 +47,7 @@ while Level == 1:
     Level1.update(Lv1,enemies, plats, spikes,Dave,SCREEN,Alien)
     for plat in plats:
         Dave.move(plat)
-        #plat.collision(Dave.rect)   Make this use a normal rect LETS GET IT
+        plat.collision(Dave)  # Make this use a normal rect LETS GET IT
 
     pygame.display.update()
     #Dave won't move?

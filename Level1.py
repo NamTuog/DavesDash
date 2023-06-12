@@ -50,43 +50,17 @@ class Lv1():
         spike = Spike.Spike(450, 580, 10, 20)
         spikes.append(spike)
 
-        #This is what we got from sam for collision. Gonna try to put this in a for loop so that it works with the list system
-        #platform1.collision(player)
-        #player.move(platform2)
-        #platform2.collision(player)
-        #player.move(platform3)
-        #platform3.collision(player)
-        #player.move(platform4)
-        #platform4.collision(player)
-        #player.move(platform5)
-        #platform5.collision(player)
-        #player.move(platform6)
-        #platform6.collision(player)
-        #player.move(platform7)
-        #platform7.collision(player)
-        #player.move(platform8)
-        #platform8.collision(player)
-        #platform9.collision(player)
 
-        #spike1.collision(player)
-        #flag1.collision(player)
-
-        #spike = Spike.Spike()
-        #spikes.append(spike)
-        #spike = Spike.Spike()
-        #spikes.append(spike)
-        #alien = Alien.Alien()
-        #enemies.append(alien)
         return spike, plats, spikes, enemies, Dave
 
-def update(Lv1,enemies, Platform, spikes,Dave,SCREEN,Alien):
+def update(Lv1,enemies, plats, spikes,Dave,SCREEN,Alien):
     SCREEN.blit(Lv1.image, Lv1.rect)
     for alien in enemies:
         SCREEN.blit(alien.img, alien.rect)
     for spike in spikes:
         SCREEN.blit(spike.image, spike.rect)
     SCREEN.blit(Dave.image,Dave.rect)
-    for plat in Platform:
+    for plat in plats:
         #Dave.move(plat)
         #print(Dave.rect)
         #plat.collision(Dave.rect)

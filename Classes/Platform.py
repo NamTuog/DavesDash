@@ -21,30 +21,30 @@ class Platform_default:  # Not moving
         self.rect.x = self.x
         self.rect.y = self.y
 
-    def collision(self, player):
-        if self.left.colliderect(player.right):
-            player.rect.right = self.rect.left
-            player.movement_x = 0
+    def collision(self, Dave):
+        if self.left.colliderect(Dave.right):
+            Dave.rect.right = self.rect.left
+            Dave.movement_x = 0
 
-        if self.right.colliderect(player.left):
-            player.rect.left = self.rect.right
-            player.movement_x = 0
+        if self.right.colliderect(Dave.left):
+            Dave.rect.left = self.rect.right
+            Dave.movement_x = 0
 
-        if self.top.colliderect(player.bottom):
-            player.rect.bottom = self.rect.top
-            player.velocity_y = 0
+        if self.top.colliderect(Dave.bottom):
+            Dave.rect.bottom = self.rect.top
+            Dave.velocity_y = 0
 
-        if self.bottom.colliderect(player.top):
-            player.rect.top = self.rect.bottom
-            player.velocity_y += 1
+        if self.bottom.colliderect(Dave.top):
+            Dave.rect.top = self.rect.bottom
+            Dave.velocity_y += 1
 
 
 class Platform_jumping(Platform_default):
-    def collision(self, player):
-        if self.rect.colliderect(player):
-            player.image = pygame.image.load('JUMP.png')
-            player.velocity_y -= 12
-            player.jump = True
+    def collision(self, Dave):
+        if self.rect.colliderect(Dave):
+            Dave.image = pygame.image.load('Images/JUMP.png')
+            Dave.velocity_y -= 12
+            Dave.jump = True
         else:
             pass
 
