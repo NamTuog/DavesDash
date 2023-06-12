@@ -49,6 +49,28 @@ class Lv1():
         spikes.append(spike)
         spike = Spike.Spike(450, 580, 10, 20)
         spikes.append(spike)
+
+        #This is what we got from sam for collision. Gonna try to put this in a for loop so that it works with the list system
+        #platform1.collision(player)
+        #player.move(platform2)
+        #platform2.collision(player)
+        #player.move(platform3)
+        #platform3.collision(player)
+        #player.move(platform4)
+        #platform4.collision(player)
+        #player.move(platform5)
+        #platform5.collision(player)
+        #player.move(platform6)
+        #platform6.collision(player)
+        #player.move(platform7)
+        #platform7.collision(player)
+        #player.move(platform8)
+        #platform8.collision(player)
+        #platform9.collision(player)
+
+        #spike1.collision(player)
+        #flag1.collision(player)
+
         #spike = Spike.Spike()
         #spikes.append(spike)
         #spike = Spike.Spike()
@@ -65,4 +87,10 @@ def update(Lv1,enemies, Platform, spikes,Dave,SCREEN,Alien):
         SCREEN.blit(spike.image, spike.rect)
     SCREEN.blit(Dave.image,Dave.rect)
     for plat in Platform:
+        #Dave.move(plat)
+        #print(Dave.rect)
+        #plat.collision(Dave.rect)
         SCREEN.blit(plat.image,plat.rect)
+
+    #collision is NOT working. Only a general idea but Kinda inefficient because it checks for collision with every box every frame
+    ##return Lv1.plats[i-1].collision(Dave.rect)

@@ -37,13 +37,17 @@ while Level != 1:
 
 #LEVEL 1 START
 Lv1 = Level1.Lv1()
-spike, Platform, spikes, enemies, Dave = Level1.Lv1.init_1(Lv1,Dave,Platform,Spike,Alien)
+spike, plats, spikes, enemies, Dave = Level1.Lv1.init_1(Lv1,Dave,Platform,Spike,Alien)
 while Level == 1:
     clock.tick(60)
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
-    Level1.update(Lv1,enemies, Platform, spikes,Dave,SCREEN,Alien)
+    Level1.update(Lv1,enemies, plats, spikes,Dave,SCREEN,Alien)
+    for plat in plats:
+        Dave.move(plat)
+        #plat.collision(Dave.rect)   Make this use a normal rect
+
     pygame.display.update()
     #Dave won't move?

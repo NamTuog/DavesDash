@@ -54,6 +54,7 @@ class Dave():
 
         # Key
         key = pygame.key.get_pressed()
+        print(key)
 
         # Left & Right Keys
         if key[pygame.K_LEFT] or key[pygame.K_a]:
