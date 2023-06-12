@@ -10,7 +10,7 @@ class Dave():
         self.size = (100, 100)
         self.health = 1
         self.speed = 4
-        self.default_img = pygame.image.load('IDLE1.png')  # First image
+        self.default_img = pygame.image.load('Images/IDLE1.png')  # First image
         self.image = self.default_img
         self.rect = self.image.get_rect()
 
@@ -82,7 +82,7 @@ class Dave():
                 else:
                     pass
         if self.jump:  # While it is jumping
-            self.image = pygame.image.load('JUMP.png')  # JUMP image
+            self.image = pygame.image.load('Images/JUMP.png')  # JUMP image
             time_now = pygame.time.get_ticks()  # Time Now
             time_difference = time_now - self.jump_time  # Differnce betwen the time
             if time_difference > 1:  # If the time difference is bigger than 1000
@@ -91,7 +91,7 @@ class Dave():
         # Walking Motion
         if self.image_Change:  # When self.image_Change is true from left & right movements
             if self.image_frame % 30 == 0:  # Every 10 Frames
-                self.image = pygame.image.load('IDLE2.png')  # Load another image
+                self.image = pygame.image.load('Images/IDLE2.png')  # Load another image
                 self.image = pygame.transform.scale(self.image, self.size)
             else:
                 self.image = self.default_img  # Go back to the original image
