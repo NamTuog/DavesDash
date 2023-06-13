@@ -7,12 +7,11 @@ class Platform_default:  # Not moving
         self.size = (width, height)
         self.x = int(x)
         self.y = int(y)
-        self.image = pygame.image.load(img)
-        self.image = pygame.transform.scale(self.image, self.size)
-        self.rect = self.image.get_rect()
+        self.img = pygame.image.load(img)
+        self.img = pygame.transform.scale(self.img, self.size)
+        self.rect = self.img.get_rect()
         self.top = pygame.Rect(self.x + 10, self.y, self.size[0] - 20, self.size[1] // 4)
         self.bottom = pygame.Rect(self.x, self.y + self.size[1] // 2, self.size[0], self.size[1] // 2)
-
         self.left = pygame.Rect(self.x, self.y + self.size[1] // 4, (self.size[0]) // 4,
                                 self.size[1] // 2)  # Left half
         self.right = pygame.Rect(self.x + (self.size[0] - (self.size[0] // 4)), self.y + self.size[1] // 4,
@@ -47,8 +46,3 @@ class Platform_jumping(Platform_default):
             Dave.jump = True
         else:
             pass
-
-
-
-
-

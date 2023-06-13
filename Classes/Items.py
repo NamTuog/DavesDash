@@ -1,4 +1,4 @@
-import pygame, Images
+import pygame
 
 items = []
 class SpeedUp: # Item gives player a speed up at tho cost of a jump down

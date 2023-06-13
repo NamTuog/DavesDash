@@ -5,8 +5,8 @@ import pygame
 # Class (Main Character)
 class Dave():
     def __init__(self, x, y):
-        self.x = int(x)
-        self.y = int(y)
+        self.x = x
+        self.y = y
         self.size = (100, 100)
         self.health = 1
         self.speed = 4
@@ -50,7 +50,7 @@ class Dave():
     def move(self, platform):
         # Movements
         self.movement_x = 0  # X movements that are totally added
-        self.movement_y = 0  # Y movements that are totallya dded
+        self.movement_y = 0  # Y movements that are totally added
 
         # Key
         key = pygame.key.get_pressed()
@@ -67,14 +67,13 @@ class Dave():
             self.image_Flipped = False  # Not flipping the iamge
 
         # Gravity
-        if not self.rect.colliderect(platform):
-            self.velocity_y += 0.25
+        if not self.bottom.colliderect(platform):
+            self.velocity_y += 0.15
 
         # Jumping
-
         if not self.jump:  # Prevents Double Jumps
             if key[pygame.K_UP] or key[pygame.K_SPACE] or key[pygame.K_w]:  # When the Up or space is pressed
-                if self.bottom.colliderect(platform):  # When colliding with the platform
+                if self.rect.colliderect(platform):  # When colliding with the platform
                     self.jump = True  # Jumping is valid
                     self.jump_time = pygame.time.get_ticks()  # Measure the time
                     self.velocity_y = -self.jumping_speed  # Goes Up by 35
@@ -87,10 +86,10 @@ class Dave():
             if time_difference > 1:  # If the time difference is bigger than 1000
                 self.jump = False  # Jump finishes   (Does not go forever)
 
-        # Walking Motion
+         #Walking Motion
         if self.image_Change:  # When self.image_Change is true from left & right movements
             if self.image_frame % 30 == 0:  # Every 10 Frames
-                self.image = pygame.image.load('Images/IDLE2.png')  # Load another image
+                self.image = pygame.image.load('Images/RUN2.png')  # Load another image
                 self.image = pygame.transform.scale(self.image, self.size)
             else:
                 self.image = self.default_img  # Go back to the original image
@@ -98,8 +97,8 @@ class Dave():
             self.image_frame += 1
 
             # Image Switching
-        if self.image_Flipped:  # When flipped is true
-            self.image = pygame.transform.flip(self.default_img, True, False)  # flip the image
+        #if self.image_Flipped:  # When flipped is true
+        #    self.image = pygame.transform.flip(self.default_img, True, False)  # flip the image
 
         self.movement_y += self.velocity_y  # Add all the velocities including Jump and Gravity to the movement_y
         self.rect.x += self.movement_x  # Move the player

@@ -2,7 +2,7 @@ import pygame
 
 
 class Spike():
-    def __init__(self, x, y, width, height):  # x/y are the coordiantes of the ground
+    def __init__(self, x, y, width, height):  # x/y are the coordinates of the ground
         self.size = (width, height)
         self.x = int(x)
         self.y = int(y)

@@ -9,11 +9,14 @@ class Alien():
         self.rect = self.img1.get_rect()
         self.img2 = pygame.image.load('Images/WALK2.png')
         self.img2 = pygame.transform.scale(self.img2, self.size)
-        self.img2 = pygame.image.load('Images/WALK3.png')
-        self.img2 = pygame.transform.scale(self.img3, self.size)
+        self.img3 = pygame.image.load('Images/WALK3.png')
+        self.img3 = pygame.transform.scale(self.img3, self.size)
         self.run = [self.img1,self.img2,self.img3]
+        self.lx = lx
+        self.rx = rx
+        self.wany = wany
 
-        self.rect.move(rx,wany)
+        self.rect.move(self.rx,self.wany)
 
         # Changing images
         self.image_flipped = False
@@ -21,7 +24,6 @@ class Alien():
         # Directions
         self.left = False
         self.right = False
-
 
 
     def wander(self):
@@ -60,6 +62,7 @@ class FAlien():
         self.rect.move(rx,wany)
 
         # Directions
+        self.image_flipped = False
         self.left = True
         self.right = False
 
@@ -69,7 +72,6 @@ class FAlien():
         # Left
         if self.left and self.x > self.lx:  # and not self.right
             self.rect.move_ip(-self.speed,0)
-            self.img_change = True
             self.image_flipped = True
             if self.rect.get_rect >= (self.lx,self.wany):
                 self.right == True
@@ -78,12 +80,12 @@ class FAlien():
         # Right
         elif self.right and self.x < self.rx:
             self.rect.move_ip(self.speed,0)
-            self.img_change = True
             self.image_flipped = False
             if self.rect.get_rect >= (self.lx,self.wany):
                 self.left == True
                 self.right == False
-    def update(self):
+
+    def update(self):   # Used to update the alien's image based on movement direction
         self.index += 1
         if self.index >= len(self.run):
             self.index = 0

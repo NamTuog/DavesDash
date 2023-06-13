@@ -11,26 +11,24 @@ class Lv1():
         plats = []
         spikes = []
         enemies = []
-        Dave = Dave.Dave(125,10)
-        plat = Platform.Platform_default(0,570,370,50,'Images/WORLD1PLATFORM.png')
-        plats.append(plat)
-        plat=Platform.Platform_default(460,570,360,50,'Images/WORLD1PLATFORM.png')
-        plats.append(plat)
-        plat = Platform.Platform_jumping(770,530,20,25,'Images/Jumping.png')
-        plats.append(plat)
-        plat = Platform.Platform_default(460,370,190,25, 'Images/WORLD1PLATFORM.png')
-        plats.append(plat)
-        plat = Platform.Platform_default(200,370,150,25, 'Images/WORLD1PLATFORM.png')
-        plats.append(plat)
-        plat = Platform.Platform_default(48, 350, 75, 20, 'Images/platform_default.png')
-        plats.append(plat)
-        plat = Platform.Platform_default(200,178,150,25, 'Images/platform_default.png')
-        plats.append(plat)
-        plat = Platform.Platform_default(460,160,65,25, 'Images/platform_default.png')
-        plats.append(plat)
-        plat = Platform.Platform_jumping(45,301,20,25, 'Images/Jumping.png')
-        plats.append(plat)
-        Dave.rect = Dave.rect.move(125,450)
+        plat1 = Platform.Platform_default(0,570,370,50,'Images/WORLD1PLATFORM.png')
+        plats.append(plat1)
+        plat2 = Platform.Platform_default(460,570,360,50,'Images/WORLD1PLATFORM.png')
+        plats.append(plat2)
+        plat3 = Platform.Platform_jumping(770,530,20,25,'Images/Jumping.png')
+        plats.append(plat3)
+        plat4 = Platform.Platform_default(460,370,190,25, 'Images/WORLD1PLATFORM.png')
+        plats.append(plat4)
+        plat5 = Platform.Platform_default(200,370,150,25, 'Images/WORLD1PLATFORM.png')
+        plats.append(plat5)
+        plat6 = Platform.Platform_default(48, 350, 75, 20, 'Images/platform_default.png')
+        plats.append(plat6)
+        plat7 = Platform.Platform_default(200,178,150,25, 'Images/platform_default.png')
+        plats.append(plat7)
+        plat8 = Platform.Platform_default(460,160,65,25, 'Images/platform_default.png')
+        plats.append(plat8)
+        plat9 = Platform.Platform_jumping(45,301,20,25, 'Images/Jumping.png')
+        plats.append(plat9)
         spike = Spike.Spike(370,580,10,20)
         spikes.append(spike)
         spike = Spike.Spike(380,580,10,20)
@@ -49,22 +47,28 @@ class Lv1():
         spikes.append(spike)
         spike = Spike.Spike(450, 580, 10, 20)
         spikes.append(spike)
+        alien = Alien.Alien(200,360,190)
+        enemies.append(alien)
+        Dave = Dave.Dave(100, 15)
+        #Dave.rect = Dave.rect.move(125, 450)
+        return spike, spikes, enemies, Dave,plat1,plat2,plat3,plat4,plat5,plat6,plat7,plat8,plat9
 
-
-        return spike, plats, spikes, enemies, Dave
-
-def update(Lv1,enemies, plats, spikes,Dave,SCREEN,Alien):
+def update(Lv1,enemies,spikes,Dave,SCREEN,Alien,plat1,plat2,plat3,plat4,plat5,plat6,plat7,plat8,plat9):
     SCREEN.blit(Lv1.image, Lv1.rect)
-    for alien in enemies:
-        SCREEN.blit(alien.img, alien.rect)
+    #for alien in enemies:
+     #   Alien.Alien.wander()
+       # Alien.Alien.update()
+      #  SCREEN.blit(alien.img, alien.rect)
     for spike in spikes:
+        spike.spike.collision()
         SCREEN.blit(spike.image, spike.rect)
     SCREEN.blit(Dave.image,Dave.rect)
-    for plat in plats:
-        #Dave.move(plat)
-        #print(Dave.rect)
-        #plat.collision(Dave.rect)
-        SCREEN.blit(plat.image,plat.rect)
-
-    #collision is NOT working. Only a general idea but Kinda inefficient because it checks for collision with every box every frame
-    ##return Lv1.plats[i-1].collision(Dave.rect)
+    SCREEN.blit(plat1.img,plat1.rect)
+    SCREEN.blit(plat2.img, plat2.rect)
+    SCREEN.blit(plat3.img, plat3.rect)
+    SCREEN.blit(plat4.img, plat4.rect)
+    SCREEN.blit(plat5.img, plat5.rect)
+    SCREEN.blit(plat6.img, plat6.rect)
+    SCREEN.blit(plat7.img, plat7.rect)
+    SCREEN.blit(plat8.img, plat8.rect)
+    SCREEN.blit(plat9.img, plat9.rect)
