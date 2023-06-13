@@ -36,7 +36,7 @@ while Level != 1:
 
 #LEVEL 1 START
 Lv1 = Level1.Lv1()
-spike,spikes,enemies,Dave,plat1,plat2,plat3,plat4,plat5,plat6,plat7,plat8,plat9 = Level1.Lv1.init_1(Lv1,Dave,Platform,Spike,Alien)
+spike,spikes,enemies,Dave,plat1,plat2,plat3,plat4,plat5,plat6,plat7,plat8,plat9,Flag = Level1.Lv1.init_1(Lv1,Dave,Platform,Spike,Alien,Flag)
 while Level == 1:
     clock.tick(60)
     for event in pygame.event.get():
