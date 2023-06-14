@@ -56,12 +56,12 @@ class Lv1():
 
 def update(Lv1,enemies,spikes,Dave,SCREEN,Alien,plat1,plat2,plat3,plat4,plat5,plat6,plat7,plat8,plat9, Flag):
     SCREEN.blit(Lv1.image, Lv1.rect)
-    #for alien in enemies:
-     #   Alien.Alien.wander()
-       # Alien.Alien.update()
-      #  SCREEN.blit(alien.img, alien.rect)
+    for alien in enemies:
+        Alien.Alien.wander()
+        Alien.Alien.update()
+        SCREEN.blit(alien.img, alien.rect)
     for spike in spikes:
-        spike.spike.collision()
+        spike.collision(Dave)
         SCREEN.blit(spike.image, spike.rect)
     SCREEN.blit(Dave.image,Dave.rect)
     SCREEN.blit(plat1.img,plat1.rect)
