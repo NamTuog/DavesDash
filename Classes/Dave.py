@@ -97,8 +97,8 @@ class Dave():
             self.image_frame += 1
 
             # Image Switching
-        #if self.image_Flipped:  # When flipped is true
-        #    self.image = pygame.transform.flip(self.default_img, True, False)  # flip the image
+        if self.image_Flipped:  # When flipped is true
+            self.image = pygame.transform.flip(self.default_img, True, False)  # flip the image
 
         self.movement_y += self.velocity_y  # Add all the velocities including Jump and Gravity to the movement_y
         self.rect.x += self.movement_x  # Move the player
