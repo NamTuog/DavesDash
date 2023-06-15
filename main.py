@@ -1,5 +1,5 @@
 import pygame, sys, StartScreen, Level1, time
-from Classes import Dave, Platform, Spike, Alien, Items
+from Classes import Dave, Platform, Spike, Alien, Items, Flag
 from pygame.locals import QUIT
 
 pygame.init()
@@ -43,7 +43,7 @@ while Level == 1:
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
-    Level1.update(Lv1,enemies, spikes,Dave,SCREEN,Alien,plat1,plat2,plat3,plat4,plat5,plat6,plat7,plat8,plat9)
+    Level1.update(Lv1,enemies, spikes,Dave,SCREEN,Alien,plat1,plat2,plat3,plat4,plat5,plat6,plat7,plat8,plat9,Flag)
 
     Dave.move(plat1)
     plat1.collision(Dave)

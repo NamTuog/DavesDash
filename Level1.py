@@ -49,10 +49,10 @@ class Lv1():
         spikes.append(spike)
         alien = Alien.Alien(200,360,190)
         enemies.append(alien)
-        Flag= Flag(485,100,50,60)
+        AddFlag= Flag.Flag(485,100,50,60)
         Dave = Dave.Dave(100, 15)
         #Dave.rect = Dave.rect.move(125, 450)
-        return spike, spikes, enemies, Dave,plat1,plat2,plat3,plat4,plat5,plat6,plat7,plat8,plat9,Flag
+        return spike, spikes, enemies, Dave,plat1,plat2,plat3,plat4,plat5,plat6,plat7,plat8,plat9,AddFlag
 
 def update(Lv1,enemies,spikes,Dave,SCREEN,Alien,plat1,plat2,plat3,plat4,plat5,plat6,plat7,plat8,plat9, Flag):
     SCREEN.blit(Lv1.image, Lv1.rect)
