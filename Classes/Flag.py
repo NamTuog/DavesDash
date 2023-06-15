@@ -18,3 +18,5 @@ class Flag :
        self.image = pygame.image.load('Images/CHECKPOINTNULL.png')
        self.image = pygame.transform.scale(self.image,self.size)
        print("Success!")
+
+#We're gonna have to make this cause a scene change
